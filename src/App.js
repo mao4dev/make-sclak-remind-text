@@ -28,17 +28,19 @@ export default function App() {
   return (
     <div className="App">
       <h1>Slack リマインダーテキスト生成</h1>
-      <b>
-        /remind {whoText} {whatText} {whenText} {repeat}
-      </b>
-      <TextInput setText={setWhoText} label="誰に？" />
-      <TimeInput setTime={setWhenText} label="何時？" prefix="at " />
-      <TextInput setText={setWhatText} label="なんて？" isQuotation="true" />
-      <RepeatSelect setSelected={setSelected} label="繰り返す？" />
       <div>
         <label>hint :</label>
         うまく登録できない時は、メッセージに全角空白を入れてみてください。
       </div>
+      <div>
+        <b>
+          /remind {whoText} {whatText} {whenText} {repeat}
+        </b>
+      </div>
+      <TextInput setText={setWhoText} label="誰に？" />
+      <TimeInput setTime={setWhenText} label="何時？" prefix="at " />
+      <TextInput setText={setWhatText} label="なんて？" isQuotation="true" />
+      <RepeatSelect setSelected={setSelected} label="繰り返す？" />
       {/* <button>クリップボードにコピー</button> */}
     </div>
   );

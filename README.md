@@ -1,2 +1,4 @@
 # make-sclak-remind-text
-Created with CodeSandbox
+
+入力していくと書式通りに文字列を生成してくれる
+Slack のリマインダー文字列メーカーを作成
