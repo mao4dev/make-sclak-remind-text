@@ -7,14 +7,8 @@ import Select from "@mui/material/Select";
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1
-  },
-  title: {
-    flexGrow: 1
-  },
-  selectEmpty: {
-    width: 270
+  selectWidth: {
+    width: 265
   }
 }));
 
@@ -46,7 +40,7 @@ export const RepeatSelect = (props) => {
             label={props.label}
             onChange={handleChange}
             notched
-            className={classes.selectEmpty}
+            className={classes.selectWidth}
           >
             {data.map((d) => (
               <MenuItem value={d.value}>{d.label}</MenuItem>
