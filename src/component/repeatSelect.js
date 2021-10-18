@@ -1,4 +1,25 @@
+import * as React from "react";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1
+  },
+  title: {
+    flexGrow: 1
+  },
+  selectEmpty: {
+    width: 270
+  }
+}));
+
 export const RepeatSelect = (props) => {
+  const classes = useStyles();
   const setSelected = props.setSelected;
   const handleChange = (e) => setSelected(e.target.value);
   const data = [
@@ -14,12 +35,25 @@ export const RepeatSelect = (props) => {
 
   return (
     <div>
-      <label>{props.label}</label>
-      <select defaultValue="" onChange={handleChange}>
-        {data.map((d) => (
-          <option value={d.value}>{d.label}</option>
-        ))}
-      </select>
+      <Box sx={{ Width: "25em", m: 1 }}>
+        <FormControl>
+          <InputLabel shrink id="simple-select-label">
+            {props.label}
+          </InputLabel>
+          <Select
+            labelId="simple-select-label"
+            id="simple-select"
+            label={props.label}
+            onChange={handleChange}
+            notched
+            className={classes.selectEmpty}
+          >
+            {data.map((d) => (
+              <MenuItem value={d.value}>{d.label}</MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      </Box>
     </div>
   );
 };
